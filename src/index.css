@@ -1,0 +1,119 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-[#0e0e0e] text-white font-sans;
+  }
+
+  /* Form Input Styling */
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    @apply transition-all duration-300;
+  }
+
+  /* Hover Effect */
+  input[type="text"]:hover,
+  input[type="email"]:hover,
+  input[type="password"]:hover,
+  input[type="tel"]:hover,
+  input[type="number"]:hover,
+  textarea:hover,
+  select:hover {
+    @apply shadow-[0_0_15px_rgba(184,134,11,0.15)];
+  }
+
+  /* Focus Effect */
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus,
+  input[type="tel"]:focus,
+  input[type="number"]:focus,
+  textarea:focus,
+  select:focus {
+    @apply shadow-[0_0_20px_rgba(184,134,11,0.3)];
+  }
+
+  /* Text Selection */
+  ::selection {
+    @apply bg-[#B8860B]/20 text-white uppercase;
+  }
+
+  /* Custom Underline for Highlighted Text */
+  .highlight {
+    @apply relative inline-block uppercase font-bold text-[#B8860B];
+  }
+
+  .highlight::after {
+    content: '';
+    @apply absolute -bottom-[2px] left-0 w-full h-[3px]
+           bg-[#B8860B]
+           rounded-[3px_1px] opacity-85
+           shadow-[0_0_10px_rgba(184,134,11,0.3),0_0_20px_rgba(184,134,11,0.2)];
+  }
+}
+
+@layer utilities {
+  .text-gold {
+    color: #B8860B;
+  }
+  
+  .text-silver {
+    color: #DCDCDC;
+  }
+  
+  .bg-gold {
+    background-color: #B8860B;
+  }
+  
+  .bg-silver {
+    background-color: #DCDCDC;
+  }
+  
+  .from-gold {
+    --tw-gradient-from: #B8860B;
+  }
+  
+  .to-silver {
+    --tw-gradient-to: #DCDCDC;
+  }
+
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+
+  .translate-z-\[10px\] {
+    transform: translateZ(10px);
+  }
+
+  /* Animation Classes */
+  .animate-in {
+    animation: slideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes slideIn {
+    0% {
+      opacity: 0;
+      transform: translateY(100px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-out {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+}

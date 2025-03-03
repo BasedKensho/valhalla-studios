@@ -1,0 +1,46 @@
+/* Direct text block styling */
+.text-block {
+  /* Base styles for all text blocks */
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+/* Highlighted text block */
+.text-block-highlight {
+  composes: text-block;
+  font-size: 1.25rem; /* 20px - Base size for highlighted text */
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  color: white;
+}
+
+/* Regular text block - 20% smaller than highlighted */
+.text-block-regular {
+  composes: text-block;
+  font-size: 1rem; /* 16px - 20% smaller than highlighted */
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .text-block-highlight {
+    font-size: 1.125rem; /* 18px */
+  }
+  
+  .text-block-regular {
+    font-size: 0.9rem; /* ~14.4px - Maintains 20% smaller ratio */
+  }
+}
+
+@media (max-width: 480px) {
+  .text-block-highlight {
+    font-size: 1rem; /* 16px */
+  }
+  
+  .text-block-regular {
+    font-size: 0.8rem; /* ~12.8px - Maintains 20% smaller ratio */
+  }
+}
